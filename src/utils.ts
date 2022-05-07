@@ -1,5 +1,5 @@
 import { Dimensions } from 'react-native';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 export enum Color {
   white = '#FFFFFF',
