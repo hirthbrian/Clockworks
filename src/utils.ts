@@ -1,25 +1,24 @@
-import { Dimensions } from 'react-native';
-import { faker } from '@faker-js/faker';
+import { Dimensions } from "react-native";
+import { faker } from "@faker-js/faker";
 
-export enum Color {
-  white = '#FFFFFF',
-  black = '#000000',
-  purple = '#B540C5',
-  green = '#268413',
+export enum COLORS {
+  white = "#FFFFFF",
+  black = "#000000",
+  purple = "#B540C5",
+  green = "#268413",
 }
 
-export const generateName = () => (
-  faker.fake('{{name.lastName}} {{name.firstName}}').toUpperCase()
-);
+export const generateName = () =>
+  faker.fake("{{name.lastName}} {{name.firstName}}").toUpperCase();
 
 export const generateJob = () => {
-  const jobArray = faker.name.jobTitle().split(' ');
+  const jobArray = faker.name.jobTitle().split(" ");
   jobArray.shift();
-  return jobArray.join(' ');
+  return jobArray.join(" ");
 };
 
 export const generateRectangle = () => {
-  const { width, height } = Dimensions.get('window');
+  const { width, height } = Dimensions.get("window");
 
   const maxWidth = width / 2;
   const maxHeight = height / 2;

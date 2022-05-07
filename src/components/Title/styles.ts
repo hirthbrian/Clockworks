@@ -1,14 +1,16 @@
-import { StyleSheet } from 'react-native';
+import styled from "styled-components";
+import { Props } from "./props";
 
-export default StyleSheet.create({
-  job: {
-    fontSize: 26,
-    textAlign: 'center',
-    fontFamily: 'montserratItalic',
-  },
-  name: {
-    fontSize: 38,
-    textAlign: 'center',
-    fontFamily: 'montserrat',
-  },
-});
+export const Job = styled.Text`
+  font-size: 26px;
+  text-align: center;
+  font-family: "montserratItalic";
+  color: ${(props: Props) => props.color};
+`;
+
+export const Name = styled.Text`
+  font-size: 38px;
+  text-align: center;
+  font-family: "montserrat";
+  color: ${(props: Props) => props.color};
+`;

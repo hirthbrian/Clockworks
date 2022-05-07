@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { Text, View } from 'react-native';
+import React, { useState, useEffect } from "react";
 
-import { Color, generateName, generateJob } from '../../utils';
-import styles from './styles';
+import { Color, generateName, generateJob } from "../../utils";
+import { Job, Name } from "./styles";
+import { Props } from "./props";
 
-const Title = ({ color }: { color: Color }) => {
+const Title = ({ color }: Props) => {
   const [name, setName] = useState(generateName());
   const [job, setJob] = useState(generateJob());
 
@@ -18,18 +18,10 @@ const Title = ({ color }: { color: Color }) => {
   }, []);
 
   return (
-    <View>
-      <Text
-        style={[styles.job, { color }]}
-      >
-        {job}
-      </Text>
-      <Text
-        style={[styles.name, { color }]}
-      >
-        {name}
-      </Text>
-    </View>
+    <>
+      <Job color={color}>{job}</Job>
+      <Name color={color}>{name}</Name>
+    </>
   );
 };
 

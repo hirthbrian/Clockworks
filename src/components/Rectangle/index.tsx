@@ -1,18 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { View } from 'react-native';
+import React, { useState, useEffect } from "react";
 
-import { Color, generateRectangle } from '../../utils';
-import styles from './styles';
+import { generateRectangle } from "../../utils";
+import { Props } from "./props";
+import { Container } from "./styles";
 
-const Rectangle = ({ color }: { color: Color }) => {
+const Rectangle = ({ backgroundColor }: Props) => {
   const [coordinate, setCoordinate] = useState(generateRectangle());
 
-  const {
-    width,
-    height,
-    left,
-    top,
-  } = coordinate;
+  const { width, height, left, top } = coordinate;
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -23,14 +18,12 @@ const Rectangle = ({ color }: { color: Color }) => {
   }, []);
 
   return (
-    <View
-      style={[styles.container, {
-        width,
-        height,
-        left,
-        top,
-        backgroundColor: color,
-      }]}
+    <Container
+      top={top}
+      left={left}
+      width={width}
+      height={height}
+      backgroundColor={backgroundColor}
     />
   );
 };
